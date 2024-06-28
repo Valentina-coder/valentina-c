@@ -110,6 +110,7 @@ while agregar_cliente1:
 
             valor_de_venta+=valor*int(unidades_pro)
             valor_de_compra=valor*int(unidades_pro)
+            lista_productos_c.append([f"Code:{producto}", f "Units:{unidades_pro}",f"Valor:{valor_de_compra}$"])
 
             compra=input("Agregar Compra:\n1. Si \n2. No\n")
             while not compra.isdigit() or int (compra)!=1 and int (compra)!=2:
@@ -131,16 +132,3 @@ while agregar_cliente1:
             print (i)
             print(f"PRECIO FINAL:
                   {valor_de_venta}$\n*****")
-            
-            nuevo_cliente=input("Desea agregar cliente?:")
-        if int (nuevo_cliente)==2:
-            agregar_cliente=False
-            print("saliendo...")
-
-
-
-
-with open("data.csv", "w")as archivo_csv:
-    escritor_csv= csv.writer(archivo_csv)
-    escritor_csv.writerow([nombre, telefono, producto])
-    escritor_csv.writerows(data)
